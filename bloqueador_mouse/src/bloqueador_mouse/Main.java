@@ -6,6 +6,11 @@ import java.awt.Robot;
 import java.util.Scanner;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
@@ -18,7 +23,12 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 	// main class
 	public static void main(String[] args) {
 		// create a frame
-		JFrame f = new JFrame("MouseListener");
+		JFrame f = new JFrame("UNNE");
+
+		URL iconPath = Main.class.getResource("/unne_escritorio.jpg");
+		System.out.println(iconPath);
+		ImageIcon icon = new ImageIcon(iconPath);
+		f.setIconImage(icon.getImage());
 		Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
 		Rectangle barraHerramientas = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 
